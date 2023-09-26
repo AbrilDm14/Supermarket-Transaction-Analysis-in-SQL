@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.1 20151215//EN" "JATS-journalpublishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" article-type="other" dtd-version="1.1" xml:lang="en">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="publisher-id">data</journal-id>
+      <journal-title-group>
+        <journal-title>Data</journal-title>
+        <abbrev-journal-title abbrev-type="publisher">Data</abbrev-journal-title>
+        <abbrev-journal-title abbrev-type="pubmed">Data</abbrev-journal-title>
+      </journal-title-group>
+      <issn pub-type="epub">2306-5729</issn>
+      <publisher>
+        <publisher-name>MDPI</publisher-name>
+      </publisher>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="doi">10.3390/data4020067</article-id>
+      <article-id pub-id-type="publisher-id">data-04-00067</article-id>
+      <article-categories>
+        <subj-group>
+          <subject>Data Descriptor</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Point of Sale (POS) Data from a Supermarket: Transactions and Cashier Operations</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Antczak</surname>
+            <given-names>Tomasz</given-names>
+          </name>
+        </contrib>
+        <contrib contrib-type="author">
+          <contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0003-1619-5239</contrib-id>
+          <name>
+            <surname>Weron</surname>
+            <given-names>Rafa&#x142;</given-names>
+          </name>
+          <xref rid="c1-data-04-00067" ref-type="corresp">*</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="af1-data-04-00067">Department of Operations Research, Faculty of Computer Science and Management, Wroc&#x142;aw University of Science and Technology, 50-370 Wroc&#x142;aw, Poland</aff>
+      <author-notes>
+        <corresp id="c1-data-04-00067"><label>*</label>Correspondence: <email>Rafal.Weron@pwr.edu.pl</email>; Tel.: +48-71-320-4525</corresp>
+      </author-notes>
+      <pub-date pub-type="epub">
+        <day>11</day>
+        <month>05</month>
+        <year>2019</year>
+      </pub-date>
+      <pub-date pub-type="collection">
+        <month>06</month>
+        <year>2019</year>
+      </pub-date>
+      <volume>4</volume>
+      <issue>2</issue>
+      <elocation-id>67</elocation-id>
+      <history>
+        <date date-type="received">
+          <day>11</day>
+          <month>03</month>
+          <year>2019</year>
+        </date>
+        <date date-type="accepted">
+          <day>09</day>
+          <month>05</month>
+          <year>2019</year>
+        </date>
+      </history>
+      <permissions>
+        <copyright-statement>&#xA9; 2019 by the authors.</copyright-statement>
+        <copyright-year>2019</copyright-year>
+        <license license-type="open-access">
+          <license-p>Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p>
+        </license>
+      </permissions>
+      <abstract>
+        <p>As queues in supermarkets seem to be inevitable, researchers try to find solutions that can improve and speed up the checkout process. This, however, requires access to real-world data for developing and validating models. With this objective in mind, we have prepared and made publicly available high-frequency datasets containing nearly six weeks of actual transactions and cashier operations from a grocery supermarket belonging to one of the major European retail chains. This dataset can provide insights on how the intensity and duration of checkout operations changes throughout the day and week.</p>
+        <p><bold>Dataset:</bold> <xref ref-type="app" rid="app1-data-04-00067">Supplementary data</xref> to this article.</p>
+        <p><bold>Dataset License:</bold> CC-BY-NC</p>
+      </abstract>
+      <kwd-group>
+        <kwd>Point of Sale (POS) data</kwd>
+        <kwd>retail operations</kwd>
+        <kwd>customer analytics</kwd>
+        <kwd>checkout process</kwd>
+      </kwd-group>
+    </article-meta>
+  </front>
+  <body>
+    <sec id="sec1-data-04-00067">
+      <title>1. Summary</title>
+      <p>Retail store operations are an active and a relatively wide area of research. In a recent study, Mou et al. [<xref ref-type="bibr" rid="B1-data-04-00067">1</xref>] reviewed 255 publications from 32 operations research, retailing and management journals over the period 2008&#x2013;2016 and categorized works by distinguishing seven operational decisions pertinent to store management. These included: (1) demand forecasting; (2) in store logistics; (3) inventory management; (4) assortment and display; (5) product promotion; (6) checkout operations and (7) employee management. Interestingly, the authors argue that in particular checkout operations will attract more attention in the near future. </p>
+      <p>As of today, however, only a few studies related to checkout operations have been published [<xref ref-type="bibr" rid="B2-data-04-00067">2</xref>,<xref ref-type="bibr" rid="B3-data-04-00067">3</xref>,<xref ref-type="bibr" rid="B4-data-04-00067">4</xref>,<xref ref-type="bibr" rid="B5-data-04-00067">5</xref>]. The likely reason is the (un)availability of recent and representative point of sale (POS) data. Even if such data is analyzed, it is often &#x201C;proprietary and therefore not available to researchers at large&#x201D;, as in the case of the Mas and Moretti dataset [<xref ref-type="bibr" rid="B6-data-04-00067">6</xref>]. With this in mind, we have prepared and made publicly available high-frequency datasets containing nearly six weeks of actual transactions and cashier operations from a grocery supermarket belonging to one of the major European retail chains. This dataset can provide insights on how the intensity of checkout operations changes throughout the day and throughout the week. Hence, it can be used as a starting point for building realistic agent-based or forecasting models of customer behavior. In practice, such data&#x2014;if available in real-time&#x2014;can augment detectors or video content analysis technologies (VCA) used to count customers inside a store [<xref ref-type="bibr" rid="B7-data-04-00067">7</xref>] and yield better predictions of the demand for opened checkouts. On the other hand, it can be used to provide feedback, e.g., in the form of voice or visual messages, about the current or near-future state of the checkout zone, with the ultimate objective of speeding up the checkout process and increasing consumer satisfaction [<xref ref-type="bibr" rid="B8-data-04-00067">8</xref>]. </p>
+    </sec>
+    <sec id="sec2-data-04-00067">
+      <title>2. Data Description </title>
+      <p>The data was retrieved from checkout/POS system logs stored in XML files, which contained various low-level transactional data. Once extracted, it was aggregated into six CSV files with the most important information about (i) transactions; and (ii) cashier operations, see <xref ref-type="table" rid="data-04-00067-t001">Table 1</xref> and <xref ref-type="table" rid="data-04-00067-t002">Table 2</xref>, respectively. The data concerns retail operations in a grocery supermarket located in a large city in Southern Poland, equipped with manned (service) and self-service checkouts. The checkout zone is composed of a single waiting line for each service checkout and one waiting line for all self-service checkouts. The data covers three nearly two-week periods: (i) 7 to 19 December 2017; (ii) 13 to 26 February 2019; and (iii) 28 March to 10 April 2019. Please note that the new regulations introduced in Poland in 2018 banned shopping on some Sundays, generally two Sundays per month in 2018 and three Sundays per month in 2019, disrupting the rather regular 7-day pattern observed until the end of 2017. Supermarkets have reacted by extending the working hours on Fridays and Saturdays, while customers had to adapt to the changes in opening hours. The two pairs of datasets from 2019 include one working (24 February, 31 March) and one non-working Sunday (17 February, 7 April) each.</p>
+    </sec>
+    <sec id="sec3-data-04-00067" sec-type="methods">
+      <title>3. Methods</title>
+      <p>The two datasets were extracted from checkout/POS system log files of a supermarket. The logs are archived in XML files and contain various low-level transactional data, most of which is not relevant for the analysis of transactions or cashier operations. A small fragment of a sample log file is depicted in <xref ref-type="fig" rid="data-04-00067-f001">Figure 1</xref>. Note that the checkout service generally consists of three separate activities: scanning (registration) of articles, payment and bagging (including idle time). POS logs include the exact times of starting (registration of the first article in the basket; <italic>BeginDateTime</italic>) and end times of the transactions (<italic>EndDateTime</italic>). </p>
+      <p>However, the data has its limitations. For instance, the registered end time is not exactly the time when the payment is made and the operation is terminated. In particular, for cash payments <italic>EndDateTime</italic> does not cover the activity of giving back the change to the customer, while the time between transactions (<italic>BreakTime</italic>) retrieved from POS data includes the idle time between two operations, which actually is not part of the service activity. However, given that idle times are very rare during peak hours, by analyzing only periods of high activity (particularly Thursdays 10 a.m. to 1 p.m., Fridays and Saturdays 11 a.m. to 2 p.m.) we can essentially eliminate the impact of idle times and obtain information about the service time itself. The timeline of the checkout service (scanning, payment and bagging) and the times retrieved from POS logs are illustrated in <xref ref-type="fig" rid="data-04-00067-f002">Figure 2</xref>. </p>
+      <p>Regarding queue management/modeling, the data does not contain customer arrival information. However, it is possible to extract an approximate arrival rate. For instance, one can combine a theoretical model (e.g., a Non-Homogeneous Poisson Process, NHPP [<xref ref-type="bibr" rid="B9-data-04-00067">9</xref>]) with transactional data, i.e., approximate the arrival rate of a NHPP at a certain hour by the average number of transactions in a time window (e.g., +/&#x2212; 30 min) around this hour. Such an approach would yield an edge over completely theoretical arrival process models typically used in publications concerning modeling queues in supermarkets. Finally, despite the fact that balking and reneging unarguably take place, our own observations and interviews with line workers suggest that they are so incidental, that they do not affect significantly the queuing process.</p>
+    </sec>
+  </body>
+  <back>
+    <app-group>
+      <app id="app1-data-04-00067">
+        <title>Supplementary Materials</title>
+        <p>The datasets (POS_operator_logs_20171207-20171219.csv, POS_operator_logs_ 20190213-20190226.csv, POS_operator_logs_20190328-20190410.csv, POS_transactions_20171207-20171219.csv, POS_transactions_20190213-20190226.csv, POS_transactions_20190328-20190410.csv) are available online at <uri>https://www.mdpi.com/2306-5729/4/2/67/s1</uri>. </p>
+		<supplementary-material id="data-04-00067-s001" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data-04-00067-s001.zip"></supplementary-material>
+      </app>
+    </app-group>
+    <notes>
+      <title>Author Contributions</title>
+      <p>T.A. collected and extracted relevant data from the checkout/POS system log files; T.A. aggregated relevant data into CSV files; T.A. and R.W. drafted the paper; R.W. reviewed and edited the final version.</p>
+    </notes>
+    <notes>
+      <title>Funding</title>
+      <p>This research was funded by the Ministry of Science and Higher Education (MNiSW), Poland, Core Funding for Statutory Research and Development Activities.</p>
+    </notes>
+    <notes notes-type="COI-statement">
+      <title>Conflicts of Interest</title>
+      <p>The authors declare no conflict of interest.</p>
+    </notes>
+    <ref-list>
+      <title>References</title>
+      <ref id="B1-data-04-00067">
+        <label>1.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mou</surname>
+              <given-names>S.</given-names>
+            </name>
+            <name>
+              <surname>Robb</surname>
+              <given-names>D.J.</given-names>
+            </name>
+            <name>
+              <surname>De Horatious</surname>
+              <given-names>N.</given-names>
+            </name>
+          </person-group>
+          <article-title>Retail store operations: Literature review and research directions</article-title>
+          <source>Eur. J. Oper. Res.</source>
+          <year>2018</year>
+          <volume>265</volume>
+          <fpage>399</fpage>
+          <lpage>422</lpage>
+          <pub-id pub-id-type="doi">10.1016/j.ejor.2017.07.003</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B2-data-04-00067">
+        <label>2.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Bermana</surname>
+              <given-names>O.</given-names>
+            </name>
+            <name>
+              <surname>Larson</surname>
+              <given-names>R.C.</given-names>
+            </name>
+          </person-group>
+          <article-title>A queueing control model for retail services having back room operations and cross-trained workers</article-title>
+          <source>Comput. Oper. Res.</source>
+          <year>2004</year>
+          <volume>31</volume>
+          <fpage>201</fpage>
+          <lpage>222</lpage>
+          <pub-id pub-id-type="doi">10.1016/S0305-0548(02)00180-6</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B3-data-04-00067">
+        <label>3.</label>
+        <element-citation publication-type="confproc">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Rossetti</surname>
+              <given-names>M.D.</given-names>
+            </name>
+            <name>
+              <surname>Pham</surname>
+              <given-names>A.T.</given-names>
+            </name>
+          </person-group>
+          <article-title>Simulation modeling of customer checkout configurations</article-title>
+          <source>Proceedings of the 2015 Winter Simulation Conference</source>
+          <conf-loc>Huntington Beach, CA, USA</conf-loc>
+          <conf-date>6&#x2013;9 December 2015</conf-date>
+          <fpage>1151</fpage>
+          <lpage>1162</lpage>
+          <pub-id pub-id-type="doi">10.1109/WSC.2015.7408241</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B4-data-04-00067">
+        <label>4.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Kwak</surname>
+              <given-names>J.K.</given-names>
+            </name>
+          </person-group>
+          <article-title>Analysis on the effect of express checkouts in retail stores</article-title>
+          <source>J. Appl. Bus. Res.</source>
+          <year>2017</year>
+          <volume>33</volume>
+          <fpage>767</fpage>
+          <lpage>774</lpage>
+          <pub-id pub-id-type="doi">10.19030/jabr.v33i4.9998</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B5-data-04-00067">
+        <label>5.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Sturley</surname>
+              <given-names>C.</given-names>
+            </name>
+            <name>
+              <surname>Newing</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Heppenstall</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Evaluating the potential of agent-based modelling to capture consumer grocery retail store choice behaviours</article-title>
+          <source>Int. Rev. Retail Distrib. Consumer Res.</source>
+          <year>2017</year>
+          <volume>28</volume>
+          <fpage>1</fpage>
+          <lpage>20</lpage>
+          <pub-id pub-id-type="doi">10.1080/09593969.2017.1397046</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B6-data-04-00067">
+        <label>6.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Mas</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Moretti</surname>
+              <given-names>E.</given-names>
+            </name>
+          </person-group>
+          <article-title>Peers at work</article-title>
+          <source>Am. Econom. Rev.</source>
+          <year>2009</year>
+          <volume>99</volume>
+          <fpage>112</fpage>
+          <lpage>145</lpage>
+          <pub-id pub-id-type="doi">10.1257/aer.99.1.112</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B7-data-04-00067">
+        <label>7.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Musalem</surname>
+              <given-names>A.</given-names>
+            </name>
+            <name>
+              <surname>Olivares</surname>
+              <given-names>M.</given-names>
+            </name>
+            <name>
+              <surname>Schilkrut</surname>
+              <given-names>A.</given-names>
+            </name>
+          </person-group>
+          <article-title>Retail in high definition: Monitoring customer assistance through video analytics</article-title>
+          <source>Columbia Bus. Sch. Res. Pap.</source>
+          <year>2016</year>
+          <pub-id pub-id-type="doi">10.2139/ssrn.2648334</pub-id>
+        </element-citation>
+      </ref>
+      <ref id="B8-data-04-00067">
+        <label>8.</label>
+        <element-citation publication-type="journal">
+          <person-group person-group-type="author">
+            <name>
+              <surname>Larson</surname>
+              <given-names>R.C.</given-names>
+            </name>
+          </person-group>
+          <article-title>There&#x2019;s more to a line than its wait</article-title>
+          <source>Tech. Rev.</source>
+          <year>1988</year>
+          <volume>91</volume>
+          <fpage>60</fpage>
+          <lpage>67</lpage>
+        </element-citation>
+      </ref>
+      <ref id="B9-data-04-00067">
+        <label>9.</label>
+        <element-citation publication-type="book">
+          <source>Statistical Tools for Finance and Insurance</source>
+          <edition>2nd ed.</edition>
+          <person-group person-group-type="editor">
+            <name>
+              <surname>Cizek</surname>
+              <given-names>P.</given-names>
+            </name>
+            <name>
+              <surname>H&#xE4;rdle</surname>
+              <given-names>W.</given-names>
+            </name>
+            <name>
+              <surname>Weron</surname>
+              <given-names>R.</given-names>
+            </name>
+          </person-group>
+          <publisher-name>Springer</publisher-name>
+          <publisher-loc>Berlin, Germany</publisher-loc>
+          <year>2011</year>
+          <pub-id pub-id-type="doi">10.1007/978-3-642-18062-0</pub-id>
+        </element-citation>
+      </ref>
+    </ref-list>
+    <sec sec-type="display-objects">
+      <title>Figures and Tables</title>
+      <fig id="data-04-00067-f001" position="float">
+        <label>Figure 1</label>
+        <caption>
+          <p>A small fragment of a sample XML log file for a single transaction. Only data for the first item (&#x2018;LineItem&#x2019;) is shown.</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data-04-00067-g001.tif"/>
+      </fig>
+      <fig id="data-04-00067-f002" position="float">
+        <label>Figure 2</label>
+        <caption>
+          <p>Timeline of the checkout service (scanning, payment and bagging) and the times retrieved from point of sale (POS) logs (transaction time&#x2014;<italic>TranTime</italic>, break time&#x2014;<italic>BreakTime</italic>; the latter includes the idle time).</p>
+        </caption>
+        <graphic xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="data-04-00067-g002.tif"/>
+      </fig>
+      <table-wrap id="data-04-00067-t001" position="float">
+        <object-id pub-id-type="pii">data-04-00067-t001_Table 1</object-id>
+        <label>Table 1</label>
+        <caption>
+          <p>Transactions data (POS_transactions_*.csv files): fields, data types and descriptions.</p>
+        </caption>
+        <table>
+          <thead>
+            <tr>
+              <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Field</th>
+              <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Type</th>
+              <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>WorkstationGroupID</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Type of checkout: 1&#x2014;service, 8&#x2014;self-service</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>TranID</italic>
+              </td>
+              <td align="center" valign="middle">Numeric</td>
+              <td align="center" valign="middle">Transaction ID (date, store ID, checkout ID, sequence no.)</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>BeginDateTime</italic>
+              </td>
+              <td align="center" valign="middle">Date/Time</td>
+              <td align="center" valign="middle">Date and time of transaction start </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>EndDateTime</italic>
+              </td>
+              <td align="center" valign="middle">Date/Time</td>
+              <td align="center" valign="middle">Date and time of transaction end </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>OperatorID</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Unique cashier ID</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>TranTime</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Transaction time in seconds <sup>1</sup></td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>BreakTime</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Break (including idle) time in seconds <sup>2</sup></td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>ArtNum</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Number of items, i.e., basket size</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>TNcash</italic>
+              </td>
+              <td align="center" valign="middle">True/False</td>
+              <td align="center" valign="middle">Cash payment flag (true when transaction paid in cash)</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>TNcard</italic>
+              </td>
+              <td align="center" valign="middle">True/False</td>
+              <td align="center" valign="middle">Card payment flag (true when transaction paid by a card)</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" style="border-bottom:solid thin">
+                <italic>Amount</italic>
+              </td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">Numeric</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">Transaction value</td>
+            </tr>
+          </tbody>
+        </table>
+        <table-wrap-foot>
+          <fn>
+            <p><sup>1</sup> Computed for the <italic>n</italic>-th transaction as: <italic>TranTime(n) = EndDateTime(n) &#x2212; BeginDateTime(n).</italic> <sup>2</sup> Computed for the <italic>n</italic>-th transaction as: <italic>BreakTime(n) = BeginDateTime(n) &#x2212; EndDateTime(n &#x2212; 1)</italic>, i.e., the latter is from the previous transaction.</p>
+          </fn>
+        </table-wrap-foot>
+      </table-wrap>
+      <table-wrap id="data-04-00067-t002" position="float">
+        <object-id pub-id-type="pii">data-04-00067-t002_Table 2</object-id>
+        <label>Table 2</label>
+        <caption>
+          <p>Cashier operations data (POS_operator_logs_*.csv files): fields, data types and descriptions.</p>
+        </caption>
+        <table>
+          <thead>
+            <tr>
+              <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Field</th>
+              <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Type</th>
+              <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>WorkstationGroupID</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Type of checkout: 1&#x2014;service, 8&#x2014;self-service</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>WorkstationID</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Unique checkout ID</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>TranID</italic>
+              </td>
+              <td align="center" valign="middle">Numeric</td>
+              <td align="center" valign="middle">Transaction ID (date, store ID, checkout ID, sequence no.)</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>BeginDateTime</italic>
+              </td>
+              <td align="center" valign="middle">Date/Time</td>
+              <td align="center" valign="middle">Date and time of transaction start</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle">
+                <italic>OperatorID</italic>
+              </td>
+              <td align="center" valign="middle">Integer</td>
+              <td align="center" valign="middle">Unique cashier ID</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" style="border-bottom:solid thin">
+                <italic>Items</italic>
+              </td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">Text</td>
+              <td align="center" valign="middle" style="border-bottom:solid thin">Operation identifier <sup>1</sup></td>
+            </tr>
+          </tbody>
+        </table>
+        <table-wrap-foot>
+          <fn>
+            <p><sup>1</sup> Admissible values: <italic>OperatorSignOn</italic>&#x2014;cashier log-in, <italic>OperatorSignOff</italic>&#x2014;cashier log-off, <italic>OperatorLock</italic>&#x2014;start of cashier&#x2019;s break, <italic>OperatorUnLock</italic>&#x2014;end of cashier&#x2019;s break.</p>
+          </fn>
+        </table-wrap-foot>
+      </table-wrap>
+    </sec>
+  </back>
+</article>
