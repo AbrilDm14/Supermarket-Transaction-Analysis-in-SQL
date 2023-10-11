@@ -5,7 +5,7 @@ In this analysis we will use SQL to analyze transaction data from a Polish Super
 
 A financial analysis of point of sale transactions can have many objectives, including:
 
-- Increasing sales by identifying customers' wants.
+- Increasing sales by identifying customers' wants and needs.
 - Increasing productivity of stores and operations by identifying processes that might take too much time.
 - Predicting sales to inform decisions on investments.
 
